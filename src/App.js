@@ -7,7 +7,7 @@ function App() {
   return (
   <div className="App">
     <NavBar />
-    <ItemListContainer greeting="Espacio provisto para insertar la galeria de productos" />
+    <ItemListContainer />
   </div>
   );
 }
