@@ -6,18 +6,28 @@ import React, {useState} from "react";
 
 const ItemCount = (props) =>{
 
-    const [amountOfItems, setRates] = useState(1);
+    const [amountOfItems, setAmount] = useState(1);
     
     const productMinusOne = () => {
         if(amountOfItems>1)
-            setRates(amountOfItems-1);
+        {
+            const aux = amountOfItems - 1;
+            setAmount(aux);
+        }
+            
     }
     
     const productPlusOne = () => {
         if(amountOfItems<props.stock)
-            setRates(amountOfItems+1);
+        {
+            const aux = amountOfItems + 1;
+            setAmount(aux);
+        }
     }
     
+    const addToCart = () => {
+        console.log(`Compraste: ${amountOfItems} items`)
+    }
 
     return(
     <>
@@ -39,7 +49,7 @@ const ItemCount = (props) =>{
                 
                 </Btsp.Row>
             </Btsp.Container>
-            <Btsp.Button variant="primary">Agregar al carrito</Btsp.Button>
+            <Btsp.Button variant="primary" onClick={()=>addToCart()}>Agregar al carrito</Btsp.Button>
     </>
     );
 }
