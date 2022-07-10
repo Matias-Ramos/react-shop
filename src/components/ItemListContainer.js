@@ -1,7 +1,11 @@
+import ItemCount from "./ItemCount";
+
 const ItemListContainer = (props) =>
 {
     return(
-    <span>{props.greeting}</span>
+        <>
+            <ItemCount stock='5'/>
+        </>
     );
 }
 export default ItemListContainer;
