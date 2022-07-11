@@ -36,7 +36,7 @@ const ItemCount = (props) =>{
                     
                     {/*Menos productos*/}
                     <Btsp.Col xs xl lg="2">
-                        <Btsp.Button variant="primary" onClick={()=>productMinusOne()}> - </Btsp.Button>
+                        <Btsp.Button variant="secondary" onClick={()=>productMinusOne()}> - </Btsp.Button>
                     </Btsp.Col>
 
                     {/*Indicador de cantidad*/}
@@ -44,12 +44,12 @@ const ItemCount = (props) =>{
                     
                     {/*Mas productos*/}
                     <Btsp.Col xs xl lg="2">
-                        <Btsp.Button variant="primary" onClick={()=>productPlusOne()}> + </Btsp.Button>
+                        <Btsp.Button variant="secondary" onClick={()=>productPlusOne()}> + </Btsp.Button>
                     </Btsp.Col>
                 
                 </Btsp.Row>
             </Btsp.Container>
-            <Btsp.Button variant="primary" onClick={()=>addToCart()}>Agregar al carrito</Btsp.Button>
+            <Btsp.Button variant="warning" onClick={()=>addToCart()}>Agregar al carrito</Btsp.Button>
     </>
     );
 }

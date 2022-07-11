@@ -1,11 +1,24 @@
-import ItemCount from "./ItemCount";
+import React, {useState} from "react";
+import ItemList from "./ItemList";
+import stock from "../data/stock.json";
 
-const ItemListContainer = (props) =>
-{
+const ItemListContainer = () =>
+{  
+    //state-variable declaration
+    const [arrayOfProducts , setProductsList] = useState([]);
+
+    //promise
+    const promise = new Promise ( (resolve, reject) => {
+        setTimeout( () => resolve(stock), 2000);
+    } )
+
+    //promise assignment to state-variable
+    promise.then( (dataFromPromise) => {
+        setProductsList(dataFromPromise);
+    } );
+
     return(
-        <>
-            <ItemCount stock='5'/>
-        </>
+        <ItemList arrayOfProducts={arrayOfProducts}/>
     );
 }
 export default ItemListContainer;
