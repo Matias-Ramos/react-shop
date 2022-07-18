@@ -40,7 +40,7 @@ const ItemCount = (props) =>{
                     </Btsp.Col>
 
                     {/*Indicador de cantidad*/}
-                    <Btsp.Col md="auto">{amountOfItems}</Btsp.Col>
+                    <Btsp.Col md="auto"><b>{amountOfItems}</b></Btsp.Col>
                     
                     {/*Mas productos*/}
                     <Btsp.Col xs xl lg="2">

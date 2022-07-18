@@ -4,7 +4,7 @@
         "title":"Bufanda",
         "price":1000,
         "color":"Beige",
-        "imgURL":"../assets/bufanda.png",
+        "imgURL":"../../images/bufanda.png",
         "stock":3
     },
     {
@@ -12,15 +12,15 @@
         "title":"Remera",
         "price":5000,
         "color":"Roja",
-        "imgURL":"../assets/remera.png",
+        "imgURL":"../../images/remera.png",
         "stock":4
     },
     {
         "id":"3",
         "title":"Campera",
         "price":10000,
-        "color":"Negra",
-        "imgURL":"../assets/campera.png",
+        "color":"Blanca",
+        "imgURL":"../../images/campera.png",
         "stock":5
     }
 ]
