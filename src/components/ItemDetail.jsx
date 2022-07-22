@@ -3,20 +3,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ItemCount from "./ItemCount"
 
-const ItemDetail = (props) => 
+const ItemDetail = ({productInfo}) => 
 {
     return (
     <>
         <Container id="itemDetail">
             <Row>
                 <Col>
-                    <img src={props.imgURL} alt=""/>
+                    <img src={productInfo.imgURL} alt=""/>
                 </Col>
                 <Col className="d-flex flex-column justify-content-center">
-                    <h1>{props.title} {props.color}</h1>
-                    <h2>${props.price}</h2>
-                    <span><i>(Stock: {props.stock})</i></span>
-                    <ItemCount stock={props.stock}/>
+                    <h1>{productInfo.title} {productInfo.color}</h1>
+                    <h2>${productInfo.price}</h2>
+                    <span><i>(Stock: {productInfo.stock})</i></span>
+                    <ItemCount stock={productInfo.stock}/>
                 </Col>
             </Row>
         </Container>

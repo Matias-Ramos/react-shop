@@ -1,27 +1,30 @@
 [  
     {
-        "id":"1",
+        "id":1,
         "title":"Bufanda",
         "price":1000,
         "color":"Beige",
         "imgURL":"../../images/bufanda.png",
-        "stock":3
+        "stock":3,
+        "category":"winter"
     },
     {
-        "id":"2",
+        "id":2,
         "title":"Remera",
         "price":5000,
         "color":"Roja",
         "imgURL":"../../images/remera.png",
-        "stock":4
+        "stock":4,
+        "category":"summer"
     },
     {
-        "id":"3",
+        "id":3,
         "title":"Campera",
         "price":10000,
         "color":"Blanca",
         "imgURL":"../../images/campera.png",
-        "stock":5
+        "stock":5,
+        "category":"winter"
     }
 ]
 
