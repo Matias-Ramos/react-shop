@@ -6,38 +6,26 @@ import { useParams } from "react-router";
 
 const ItemDetailContainer = () => {
     
+    //Url-param
     const { itemId } = useParams();
-    //state-variable declaration
+
+    //state-variable
     const [product, setProductObject] = useState();
 
-    useEffect( () => {
-        if(itemId === undefined)
+    useEffect( () => { 
+
+        //promise
+        const promise = new Promise ( (resolve,reject) => {
+            setTimeout( () => resolve(
+                stock.find( item => item.id === parseInt(itemId) )
+                ), 2000 )
+        })
+        
+        //promise assignment to state-variable
+        promise.then( (datafromPromise) => 
         {
-            //promise
-            const promise = new Promise ( (resolve,reject) => {
-                setTimeout( () => resolve(stock[1]), 2000 )
-            })
-            //promise assignment to state-variable
-            promise.then( (datafromPromise) => 
-            {
-                setProductObject(datafromPromise)
-            } )
-        }
-        else
-        {
-            //promise
-            const promise = new Promise ( (resolve,reject) => {
-                setTimeout( () => resolve(
-                    stock.find( item => item.id === parseInt(itemId) )
-                    ), 2000 )
-            })
-            //promise assignment to state-variable
-            promise.then( (datafromPromise) => 
-            {
-                console.log(datafromPromise)
-                setProductObject(datafromPromise)
-            } )
-        }
+            setProductObject(datafromPromise)
+        } )
     }, [itemId] )
 
 

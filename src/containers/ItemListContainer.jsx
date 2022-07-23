@@ -6,47 +6,26 @@ import { useParams } from "react-router";
 
 const ItemListContainer = () =>
 {  
+    //Url-param
     const { categoryId } = useParams();
 
-    //state-variable declaration
+    //state-variable
     const [arrayOfProducts , setProductsList] = useState();
 
-
     useEffect( () => {
-        if(categoryId===undefined)
-        {//promise
-        const promise = new Promise ( (resolve, reject) => {
-            setTimeout( () => resolve(stock), 2000);
-        } )
-        //promise assignment to state-variable
-        promise.then( (dataFromPromise) => {
-            setProductsList(dataFromPromise);
-        } );}
 
-        if(categoryId==="summer")
-        {//promise
+        //promise
         const promise = new Promise ( (resolve, reject) => {
             setTimeout( () => resolve(
-                stock.filter( item => item.category === categoryId )
+                //no category = return allstock, else filtercategory in stock
+                categoryId===undefined? (stock) : stock.filter( item => item.category === categoryId )
                 ), 2000);
         } )
-        //promise assignment to state-variable
-        promise.then( (dataFromPromise) => {
-            setProductsList(dataFromPromise);
-        } );}
-    
-        if(categoryId==="winter")
-        {//promise
-        const promise = new Promise ( (resolve, reject) => {
-            setTimeout( () => resolve(
-                stock.filter( item => item.category === categoryId )
-                ), 2000);
-        } )
-        //promise assignment to state-variable
-        promise.then( (dataFromPromise) => {
-            setProductsList(dataFromPromise);
-        } );}
 
+        //promise assignment to state-variable
+        promise.then( (dataFromPromise) => {
+            setProductsList(dataFromPromise);
+        } );
 
     }, [categoryId] )
 
